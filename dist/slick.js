@@ -90,8 +90,8 @@ angular.module('slick', []).directive('slick', [
               infinite: scope.infinite !== 'false',
               initialSlide: scope.initialSlide || 0,
               lazyLoad: scope.lazyLoad || 'ondemand',
-              onBeforeChange: attrs.onBeforeChange ? scope.onBeforeChange : void 0,
-              onAfterChange: function (sl, index) {
+              beforeChange: attrs.onBeforeChange ? scope.onBeforeChange : void 0,
+              afterChange: function (sl, index) {
                 if (attrs.onAfterChange) {
                   scope.onAfterChange();
                 }

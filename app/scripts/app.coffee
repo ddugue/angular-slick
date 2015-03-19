@@ -83,8 +83,8 @@ angular.module('slick', [])
             infinite: scope.infinite isnt "false"
             initialSlide:scope.initialSlide or 0
             lazyLoad: scope.lazyLoad or "ondemand"
-            onBeforeChange: if attrs.onBeforeChange then scope.onBeforeChange else undefined
-            onAfterChange: (sl, index) ->
+            beforeChange: if attrs.onBeforeChange then scope.onBeforeChange else undefined
+            afterChange: (sl, index) ->
               scope.onAfterChange() if attrs.onAfterChange
               if currentIndex?
                 scope.$apply(->
